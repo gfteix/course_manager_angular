@@ -1,7 +1,13 @@
+import { Injectable } from "@angular/core";
 import { Course } from "./course";
 
+@Injectable({ //tornando essa classae elegível para ainjeção de dependência
+    providedIn: "root"  // seja carregado na root da aplicação
+})
 export class CourseService{
-
+    retrieveAll(): Course[] {
+        return COURSES;
+    }
 }
 
 var COURSES: Course[] = [
